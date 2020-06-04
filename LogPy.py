@@ -48,4 +48,3 @@ c.OTHER("OTHER")
 
 
 # TODO Начальные установки (файл и т.д.)
-# ! Добавить DEBUG, Warrning, critical
