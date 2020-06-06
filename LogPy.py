@@ -5,10 +5,12 @@ import time
 init()
 
 
+filename =''
+def File(self,filename):
+    f = open(filename,'w')
+def SaveLog():
+    pass
 
-class LogGonfig(object):
-    def nnn():
-        pass
 
 def logtime():
     """Формирует дату формата [2020-12-31  23:59:59] и возвращает её в формате string
