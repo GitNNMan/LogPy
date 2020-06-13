@@ -4,13 +4,18 @@ import datetime
 import time
 init()
 
+filename= ''
+def FileWR(filename,msgtext):
+    f = open(filename,'a+')
+    f.write(msgtext)
+    f.close()
+    
+class FileWriteLog:
+    def __init__ (sefl):
+        pass
 
-filename =''
-def File(self,filename):
-    f = open(filename,'w')
-def SaveLog():
-    pass
-
+    def WriteLog(sefl, WriteStr):
+            pass #! Записать функцию записи строки в файл
 
 def logtime():
     """Формирует дату формата [2020-12-31  23:59:59] и возвращает её в формате string
@@ -19,34 +24,36 @@ def logtime():
     return today.strftime("[%Y-%m-%d  %H:%M:%S]")
 
 class LogPrint:
-    def __init__(sefl):
+    def __init__(self):
         print(Fore.CYAN+logtime()+"[INFO] Система логирования активирована"+Fore.RESET)
-    def INFO(self,tetxmsg):
-        print(Fore.CYAN+logtime()+"[INFO] "+tetxmsg+Fore.RESET)
-    def ERRORS(sefl,textmsg):
-        print(Fore.RED+logtime()+"[ERROR] "+textmsg+Fore.RESET)
-    def MESSAGE(sefl, textmsg):
-        print(Fore.GREEN+logtime()+"[MASSAGE] "+textmsg+Fore.RESET)
-    def LOG(sefl, tetxmsg):
-        print(Fore.YELLOW+logtime()+"[LOG] "+tetxmsg+Fore.RESET)
-    def DEBUG(sefl,tetxmsg):
-        print(Fore.MAGENTA+logtime()+"[DEBUG] "+tetxmsg+Fore.RESET)
-    def OTHER(sefl,tetxmsg):
-        print(Fore.BLUE+logtime()+"[OTHER] "+tetxmsg+Fore.RESET)
+    def INFO(self, tetxmsg):
+        commsg = logtime()+"[INFO] "+tetxmsg
+        print(Fore.CYAN+commsg+Fore.RESET)
+    def ERRORS(self, textmsg):
+        commsg = logtime()+"[ERROR] "+textmsg
+        print(Fore.RED+commsg+Fore.RESET)
+    def MESSAGE(self, textmsg):
+        commsg = logtime()+"[MASSAGE] "+textmsg
+        print(Fore.GREEN+commsg+Fore.RESET)
+    def LOG(self, tetxmsg):
+        commsg = logtime()+"[LOG] "+tetxmsg
+        print(Fore.YELLOW+commsg+Fore.RESET)
+    def DEBUG(self, tetxmsg):
+        commsg = logtime()+"[DEBUG] "+tetxmsg
+        print(Fore.MAGENTA+commsg+Fore.RESET)
+    def OTHER(self, tetxmsg):
+        commsg = logtime()+"[OTHER] "+tetxmsg
+        print(Fore.BLUE+commsg+Fore.RESET)
         
 class LogSave:
     def __init__(self):
-            pass
-
-c = LogPrint()
-
-c.INFO("INFO")
-c.ERRORS("ERRORS")
-c.LOG("LOG")
-c.MESSAGE("MESSAGE")
-c.DEBUG("DEBUG")
-time.sleep(10)
-c.OTHER("OTHER")
+        pass
+    def INFOsave(self,msgtext):
+        commsg = logtime()+"[INFO] "+msgtext
+        print(Fore.CYAN+commsg+Fore.RESET)
+        commsg = commsg+"\n"
+        FileWR(filename,commsg)
+        
 
 
 # TODO Начальные установки (файл и т.д.)
